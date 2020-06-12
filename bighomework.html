@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myblog</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		a{
+			text-decoration: none;
+		}
+		ul{
+			list-style: none;
+		}
+		.clear::after{
+			content: '';
+			display:block;
+			height: 0;
+			clear: both;
+		}
+
+
+		.header{
+			width: 1200px;
+			margin: 0px auto;
+		}
+		.header-top{
+			border-bottom: 1px solid rgba(249, 205, 173, 1.0);
+			height: 32px;
+			line-height: 32px;
+		}
+		.header-bottom{
+			background: rgba(255, 251, 240, 1.0);
+			height: 110px;
+		}
+		.container{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.header-fro{
+			float: right;
+		}
+		.header-fro li{
+			float: left;
+			margin-left: 30px;
+		}
+		.header-fro a{
+			font-size: 12px;
+			font-weight: 300;
+			color: rgba(0,0,0,1);
+		}
+		.phone{
+			padding-left: 17px;
+			background: url('img/phone.png') no-repeat left  center;
+		}
+		.weixin{
+			padding-left: 24px;
+			background: url('img/weixin.png') no-repeat left  center;
+		}
+		.qq{
+			padding-left: 24px;
+			background: url('img/QQ.jpg') no-repeat left  center ;
+		}
+		.logo{
+			margin-top: 10px;
+			float: left;
+		}
+		.nav{
+			float: left;
+			margin-top: 38px;
+		}
+		.form{
+			margin-top: 30px;
+			float: right;
+		}
+		.nav li{
+			float: left;
+			font-size: 16px;
+			font-weight: bold;
+			width: 120px;
+			text-align: center;
+			border-right: 1px solid black;
+		}
+		.nav a{
+			color: rgba(0, 0, 0, 1.0);
+		}
+		.nav .first{
+			margin-left: 40px;
+		}
+		.nav .last{
+			border: none;
+		}
+		.search{
+			height: 15px;
+			width: 150px;
+			float: left;
+			padding: 9px;
+			border: 1px solid rgba(249, 205, 173, 1.0);
+		}
+		.submit{
+			float: left;
+			width: 36px;
+			height: 36px;
+			background:url('img/search.png')no-repeat center
+			center rgba(150, 150, 150, 1.0);
+			border: 1px solid rgba(249, 205, 173, 1.0);
+		}
+		.banner-picture{
+			height: 550px;
+			position: relative;
+		}
+		.banner-picture li{
+ 		     height:550px ;
+		}
+		.banner-one{
+			background: url('img/banner.jpg')  no-repeat center center;
+		}
+		.prev{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 240px;
+			left: 8%;
+			background: black;
+		}
+		.next{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 240px;
+			right: 8%;
+			background: black;
+		}
+		.welcome{
+			width: 1200px;
+			margin: 0px auto 10px;
+			height: 60px;
+			background: #f2e7ca ;
+			
+		}
+		.welcome .sentence1{
+			text-align: center;
+			margin: 15px;
+			height: 30px;
+			line-height: 30px;
+			width: 350px;
+			float: left;
+			font-family:"Kaiti";
+	        font-size:25px;
+	        vertical-align:middle;
+	        font-weight:normal;
+			background: rgba(255, 251, 240, 1.0);
+			
+
+
+		}
+		.welcome .sentence2{
+			text-align: center;
+			margin: 15px;
+			height: 30px;
+			line-height: 30px;
+			width: 250px;
+			font-family:"Kaiti";
+	        font-size:25px;
+	        vertical-align:middle;
+	        font-weight:normal;
+			float: right;
+			background: rgba(255, 251, 240, 1.0);
+		}
+		.center{
+			width: 1200px;
+			margin: 0px auto;
+
+		}
+		.center ul li{
+			background: rgb(249, 205, 173, 0.8);
+		}
+		.guide-one,.guide-two{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			
+			width: 200px;
+			height: 30px;
+			text-align: center;
+			font-size:20px ;
+			font-weight: 300;
+			color: purple;
+			background: rgba(255, 251, 240, 1.0);
+
+		}
+		.center .list-one li{
+			width:200px ;
+			height: 250px;
+			padding: 10px 40px;
+			float: left;
+			border: 1px solid rgba(0,164,255,1);
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
+		.center .list-one li img{
+			width: 170px;
+			height: 120px;
+			padding: 0px 15px;
+		}
+		.center .content{
+			margin: 10px 0;
+			text-align: center;
+			font-size: 18px;
+			font-weight: 300;
+			background: rgba(255, 251, 240, 1.0);
+		}
+		.center .content a{
+			color: red;
+		}
+		.center .list-two li{
+			height: 100px;
+			width: 400px;
+			position: relative;
+			margin-bottom: 20px;
+			border: 1px solid rgba(0,164,255,1);
+			background: rgba(255, 251, 240, 1.0);
+
+		}
+		.center .list-two .left{
+			float: left;
+			margin-left: 50px;
+
+		}
+		.center .list-two .right{
+			float: right;
+			margin-right: 100px;
+		}
+		.center .list-two li p{
+			line-height: 100px;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 400;
+
+		}
+		.center .list-two li .tips{
+			color: gray;
+			font-size: 12px;
+			font-weight: normal;
+			position: absolute;
+			right: 0%;
+			bottom: 0%;
+
+		}
+		.center .list-two a{
+			color: red;
+		}
+		.empty-box{
+			height: 250px;
+			width: 1200px;
+			background: url('img/bg.jpg') center center no-repeat;
+			margin: 0 auto;
+		}
+		.bottom-top{
+			width: 1200px;
+			margin: 10px auto;
+			background-color:  rgba(255, 251, 240, 1.0);
+		}
+		.bottom-top .list-three {
+			width: 600px;
+			height: 50px;
+			margin: 0px auto;
+			border-style:double ;
+			background: rgba(255, 251, 240, 1.0);
+		}
+		.bottom-top .list-three li {
+			float: left;
+			width: 100px;
+			height: 50px;
+			
+			line-height: 50px;
+			margin-left: 10px;
+		}
+		.bottom-top .list-three li a{
+
+			color: black;
+		}
+		.bottom-bottom{
+			width: 1200px;
+			margin: 0 auto;
+			background: white;
+		}
+		.bottom-bottom ul li a{
+			color: black;
+		}
+		.bottom-bottom .rights{
+			width: 300px;
+			height: 20px;
+			font-size: 12px;
+			text-align: center;
+			margin: 10px auto 0px;
+
+		}
+		.bottom-bottom .list-four{
+			width: 800px;
+			height: 30px;
+			margin: 10px auto;
+			
+		}
+		.bottom-bottom .list-four li{
+			font-size: 10px;
+			width: 100px;
+			height: 30px;
+			float: left;
+			
+		}
+		.bottom-bottom .list-five{
+			width: 600px;
+			height: 20px;
+			margin: 20px auto;
+		}
+		.bottom-bottom .list-five li{
+			font-size: 12px;
+			width: 200px;
+			float: left;
+			height: 20px;
+
+		
+		}
+		.bottom-bottom .list-five li .special-li{
+			text-align: center;
+		}
+
+
+		
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header-top">
+				<div class="container clear">
+					<ul class="header-fro">
+						<li><a href="#">登录/注册</a></li>
+						<li class="phone"><a href="#">移动客户端</a></li>
+						<li class="weixin"><a href="#">微信</a></li>
+						<li class="qq"><a href="#">QQ</a></li>
+
+					</ul>
+				</div>
+		</div>
+		<div class="header-bottom">
+				<div class="container clear">
+					<img src="img/logo.jpg" alt="logo" class="logo">
+					<ul class="nav clear">
+						<li class="first"><a href="#">博客园首页</a></li>
+						<li><a href="#">联系</a></li>
+						<li><a href="#">管理</a></li>
+						<li><a href="#">关于</a></li>
+						<li><a href="#">友链</a></li>
+						<li class="last"><a href="#">赞赏</a></li>
+						
+					</ul>
+					<form action="" class="clear form">
+						
+						<input type="text" placeholder="快速搜索" class="search">
+						<input type="button" class="submit"/>
+					</form>
+				</div>
+		</div>
+	
+
+	</div>
+	<div class="welcome clear">
+		<p class="sentence1">欢迎来到ACM_Walker的博客QAQ</p>
+		<p class="sentence2">敬畏每一行代码</p>
+	</div>
+
+	<div class="banner-picture">
+		<ul>
+			<li class="banner-one"></li>
+			
+		</ul>
+		<img src="img/prev.png" alt="上一页" class="prev">
+		<img src="img/next.png" alt="下一页" class="next">
+		
+	</div>
+	<div class="center">
+		<p class="guide-one">算法竞赛&nbsp;>&nbsp;干货</p>
+		<ul class="clear list-one">
+			<li><img src="img/1.jpg" alt="pciture1">
+				<p class="content"><a href="#">基础算法</a></p>
+				<p>包括基础排序算法（快排，归并排序），位运算，前缀和与差分</p>
+			</li>
+			<li><img src="img/2.jpg" alt="pciture2">
+				<p class="content"><a href="#">数据结构</a></p>
+				<p>手动模拟栈，队列，链表，还有并查集，线段树，树状数组等高级数据结构</p>
+			</li>
+			<li><img src="img/3.jpg" alt="pciture3">
+				<p class="content"><a href="#">STL</a></p>
+				<p>C++ 中给出的标准模板库，有现成的数据结构，比如队列，栈，优先队列，map，set等</p>
+			</li>
+			<li><img src="img/4.jpg" alt="pciture4">
+				<p class="content"><a href="#">搜索</a></p>
+				<p>包括DFS，BFS，以及涉及到的剪枝与回溯问题</p>
+			</li>
+			<li><img src="img/5.png" alt="pciture5">
+				<p class="content"><a href="#">动态规划</a></p>
+				<p>包括背包问题，线性DP，区间DP，计数类DP，状态压缩DP等等</p>
+			</li>
+			<li><img src="img/6.jpg" alt="pciture6">
+				<p class="content"><a href="#">贪心</a></p>
+				<p>包括区间问题，Huffman树，排序不等式，绝对值不等式等</p>
+			</li>
+			<li><img src="img/7.jpg" alt="pciture7">
+				<p class="content"><a href="#">数论</a></p>
+				<p>包括质数，约数，欧拉函数，快速幂，扩展欧几里得算法，中国剩余定理等</p>
+			</li>
+			<li><img src="img/8.jpg" alt="pciture8">
+				<p class="content"><a href="#">图论</a></p>
+				<p>树与图的深度优先，广度优先遍历，Dijkstra，bellman-ford</p>
+			</li>
+			
+		</ul>
+		<p class="guide-two">算法竞赛&nbsp;>&nbsp;题解</p>
+		<ul class="clear list-two">
+			<li class="left">
+				<p><a href="#">LeeCode</a></p>
+				<span class="tips">已收录：309道</span>
+			</li>
+			<li class="right">
+				<p><a href="#">HDU</a></p>
+				<span class="tips">已收录：410道</span>
+			</li>
+			<li class="left">
+				<p><a href="#">PKU</a></p>
+				<span class="tips">已收录：290道</span>
+			</li>
+			<li class="right">
+				<p><a href="#">落谷</a></p>
+				<span class="tips">已收录：251道</span>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="empty-box"></div>
+	<div class="bottom-top clear">
+		<ul class="list-three clear">
+			<li><a href="#">好文要顶</a></li>
+			<li><a href="#">收藏我</a></li>
+			<li><a href="#">关注该文</a></li>
+			<li><a href="#"><img src="img/icon_weibo.png" alt="weibo"></a></li>
+			<li><a href="#"><img src="img/wechat.png" alt="wechat"></a></li>
+		</ul>
+			
+	</div>
+
+	<div style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden">
+		
+	</div>
+
+
+	<div class="bottom-bottom clear">
+		<p class="rights">Copyright © 2020 Acm_walker </p>
+		<p class="rights">Powered by .NET Core on Kubernetes</p>
+		<ul class="clear list-four">
+			<li><a href="https://about.cnblogs.com/">关于博客园</a></li>
+			<li><a href="https://about.cnblogs.com/contact">联系我们</a></li>
+			<li><a href="https://about.cnblogs.com/ad">广告服务</a></li>
+			<li><a href="https://about.cnblogs.com/job">人才服务</a></li>
+			<li><span>©2004-2020</span></li>
+			<li><a href="https://about.cnblogs.com/">博客园</a></li>
+			<li><span>保留所有权利</span></li>
+			<li><a href="http://www.beian.miit.gov.cn/">沪ICP备09004260号</a></li>
+		</ul>
+		<ul class="list-five clear">
+			<li><p class="special-li"><a href="https://ss.knet.cn/verifyseal.dll?sn=e131108110100433392itm000000&ct=df&a=1&pa=0.25787803245785335"><img src="img/cnnic.png" alt=""></a></p></li>
+			<li class="special-text"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144">沪公网安备&nbsp;31011502001144号</a></li>
+			<li><p class="special-li"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144"><img src="img/ghs.png" alt=""></a></p></li>
+		</ul>
+
+
+	</div>
+	
+</body>
+</html>
